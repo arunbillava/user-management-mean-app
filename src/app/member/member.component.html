@@ -1,0 +1,38 @@
+<div *ngIf="!gotResult" class="spinner"></div>
+<div *ngIf="gotResult" >
+  <div>
+    <div class="title">
+      <h3>Users</h3>
+    </div>
+    <div class="addBtn-container"><button class="action-btn add-btn" (click)="onAdd()">Add</button></div>
+  </div>
+  <div class="user-table-container" *ngIf="members && members.length>0">
+    <table>
+      <thead>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Department</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of members; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{member.firstName +' '+member.lastName}}</td>
+          <td>{{member.email}}</td>
+          <td>{{member.phoneNumber}}</td>
+          <td>{{member.department}}</td>
+          <td><button class="action-btn edit-btn" (click)="onEdit(member)">Edit</button></td>
+          <td><button class="action-btn delete-btn" (click)="onDelete(member)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="no-user-found" *ngIf="!members || members.length==0">
+    <p>
+      You have not added any user yet!. Why don't you get started <button class="no-user-btn" (click)="onAdd()">here</button>
+    </p>
+  </div>
+</div>

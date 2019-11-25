@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="submit(form)">
+    <h1 mat-dialog-title *ngIf="!data">Add User</h1>
+   <h1 mat-dialog-title *ngIf="data">Edit User</h1>
+    <mat-dialog-content>
+        <mat-form-field>
+            <input matInput formControlName="firstName" placeholder="Enter first name">
+      <mat-error *ngIf="!form.controls.firstName.valid">first name is required</mat-error>
+          
+    </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="lastName" placeholder="Enter lasst name">
+      <mat-error *ngIf="!form.controls.lastName.valid">last name is required</mat-error>
+          
+    </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="email" placeholder="Enter email">
+      <mat-error *ngIf="!form.controls.email.valid">email is required</mat-error>
+          
+    </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="phoneNumber" type="number" placeholder="Enter phone number">
+      <mat-error *ngIf="!form.controls.phoneNumber.valid">phone number is required</mat-error>
+          
+    </mat-form-field>
+        <mat-form-field>
+      <mat-label>Select Department</mat-label>
+            <mat-select formControlName="department"  >
+                <mat-option label="--select department --"></mat-option>
+                <mat-option value="Electronics">Electronics</mat-option>
+                <mat-option value="Mechanical">Mechanical</mat-option>
+                <mat-option value="Computer science">Computer science</mat-option>
+              </mat-select>
+      <mat-error *ngIf="!form.controls.department.valid">department is required</mat-error>
+          
+    </mat-form-field>
+    </mat-dialog-content>
+    <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>
+    <mat-dialog-actions>
+        <button mat-button class="add-btn" *ngIf="!data" type="submit">Add</button>
+        <button mat-button class="add-btn"  *ngIf="data" type="submit">Edit</button>
+        <button mat-button type="button" mat-dialog-close>Cancel</button>
+      </mat-dialog-actions>
+</form>

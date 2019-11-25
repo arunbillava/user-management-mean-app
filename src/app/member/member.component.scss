@@ -1,0 +1,109 @@
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #21d0a3;
+  color: white;
+}
+
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  padding: 15px;
+}
+
+.edit-btn,
+.add-btn {
+  border: 2px solid #21d0a3;
+}
+
+.no-user-btn{
+    border: 1px solid #21d0a3;
+    font-size: 12px;
+    background: none;
+}
+
+.action-btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  background: none;
+  padding-right: 20px;
+  font-size: 12px;
+}
+
+.edit-btn:hover,
+.add-btn:hover,
+.no-user-btn:hover {
+  background: #21d0a3;
+}
+
+.delete-btn:hover {
+  background: #ff000099;
+}
+
+.delete-btn {
+  border: 2px solid #ff000099;
+}
+
+.addBtn-container {
+  text-align: right;
+}
+
+.title {
+  float: left;
+  padding-left: 15px;
+}
+
+.addBtn-container {
+  float: right;
+  margin: 20px;
+}
+
+
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: #21d0a3;
+  animation: spinner .6s linear infinite;
+}
+
+.no-user-found{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+}
